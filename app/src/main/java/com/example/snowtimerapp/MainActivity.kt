@@ -121,8 +121,12 @@ fun LoginScreen() {
             onClick = {},
             modifier = Modifier
                 .align(Alignment.CenterHorizontally)
+                .width(200.dp)
         ) {
-            Text(text = "로그인")
+            Text(
+                text = "로그인",
+                fontSize = 20.sp
+            )
         }
     }
 }
