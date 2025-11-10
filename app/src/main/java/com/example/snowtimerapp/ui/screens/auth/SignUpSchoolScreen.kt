@@ -1,6 +1,7 @@
 package com.example.snowtimerapp.ui.screens.auth
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -27,8 +28,9 @@ import androidx.compose.ui.unit.sp
 import com.example.snowtimerapp.ui.components.MyTopAppBar
 
 @Composable
-fun SignUpEmailScreen() {
-    var email by remember { mutableStateOf("") }
+fun SignUpSchoolScreen() {
+    var std by remember { mutableStateOf("") }
+    var major by remember { mutableStateOf("") }
 
     MyTopAppBar(title = "회원가입")
 
@@ -46,7 +48,7 @@ fun SignUpEmailScreen() {
         )
 
         Text(
-            text = "이메일을 입력해주세요",
+            text = "학번과 전공을 입력해주세요",
             fontWeight = FontWeight.Bold,
             fontSize = 20.sp
         )
@@ -55,24 +57,57 @@ fun SignUpEmailScreen() {
             modifier = Modifier.height(60.dp)
         )
 
-        TextField(
-            value = email,
-            onValueChange = { email = it },
-            placeholder = {
-                Text(
-                    text = "example.sookmyung.ac.kr",
-                    fontSize = 20.sp,
-                    color = Color.LightGray
-                )
-            },
-            modifier = Modifier.fillMaxWidth(),
-            colors = TextFieldDefaults.colors(
-                focusedContainerColor = Color.Transparent,
-                unfocusedContainerColor = Color.Transparent,
-                unfocusedIndicatorColor = Color.LightGray,
-                focusedIndicatorColor = Color.Black
+        Row(
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = "학번",
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Medium,
+                modifier = Modifier
+                    .padding(start = 10.dp, end = 30.dp)
             )
+
+            TextField(
+                value = std,
+                onValueChange = { std = it },
+                modifier = Modifier.fillMaxWidth(),
+                colors = TextFieldDefaults.colors(
+                    focusedContainerColor = Color.Transparent,
+                    unfocusedContainerColor = Color.Transparent,
+                    unfocusedIndicatorColor = Color.LightGray,
+                    focusedIndicatorColor = Color.Black
+                )
+            )
+        }
+
+        Spacer(
+            modifier = Modifier.height(10.dp)
         )
+
+        Row(
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = "전공",
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Medium,
+                modifier = Modifier
+                    .padding(start = 10.dp, end = 30.dp)
+            )
+
+            TextField(
+                value = major,
+                onValueChange = { major = it },
+                modifier = Modifier.fillMaxWidth(),
+                colors = TextFieldDefaults.colors(
+                    focusedContainerColor = Color.Transparent,
+                    unfocusedContainerColor = Color.Transparent,
+                    unfocusedIndicatorColor = Color.LightGray,
+                    focusedIndicatorColor = Color.Black
+                )
+            )
+        }
 
         Spacer(
             modifier = Modifier.height(200.dp)

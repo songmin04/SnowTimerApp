@@ -10,7 +10,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.example.snowtimerapp.ui.screens.auth.SignUpEmailScreen
+import com.example.snowtimerapp.ui.screens.auth.SignUpIdScreen
+import com.example.snowtimerapp.ui.screens.auth.SignUpSchoolScreen
 import com.example.snowtimerapp.ui.theme.SnowTimerAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -27,8 +28,7 @@ class MainActivity : ComponentActivity() {
                             .fillMaxSize()
                             .padding(paddingValues)
                     ) {
-                        //LoginScreen()
-                        SignUpEmailScreen()
+                        SignUpIdScreen()
                     }
                 }
             }
