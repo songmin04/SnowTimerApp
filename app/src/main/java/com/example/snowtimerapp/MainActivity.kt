@@ -142,7 +142,9 @@ fun LoginScreen() {
 
         Button(
             onClick = {},
-            modifier = Modifier.width(200.dp),
+            modifier = Modifier
+                .width(200.dp)
+                .height(50.dp),
             shape = RoundedCornerShape(8.dp),
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color(0xFF053FA5),
